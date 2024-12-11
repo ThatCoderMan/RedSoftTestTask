@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "redos-test-task"
+version = "1.0.0"
+description = "redos-test-task"
+authors = ["Artemii <artemii.berezin.coder@gmail.com>"]
+readme = "README.md"
+homepage = "https://example.com"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.4"
+djangorestframework = "^3.15.2"
+drf-spectacular = "^0.28.0"
+tenacity = "^9.0.0"
+ruff = "^0.8.2"
+psycopg2 = "^2.9.10"
+psycopg = {extras = ["binary"], version = "^3.2.3"}
+requests = "^2.32.3"
+python-dotenv = "^1.0.1"
+celery = {extras = ["redis"], version = "^5.4.0"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+

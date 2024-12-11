@@ -1,0 +1,84 @@
+target-version = "py312"
+line-length = 79
+include = ["*.py"]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+[lint]
+select = [
+    "ALL"
+]
+ignore = [
+    "ANN",      # Ignore missing type annotations
+    "FBT",      # Ignore f-string related violations
+    "D100",     # Ignore missing docstring for modules
+    "D101",     # Ignore missing docstring for classes
+    "D102",     # Ignore missing docstring for methods
+    "D103",     # Ignore missing docstring for functions
+    "D104",     # Ignore missing docstring for packages
+    "D105",     # Ignore missing docstring for magic methods
+    "D106",     # Ignore missing docstring for public nested classes
+    "D107",     # Ignore missing docstring for __init__ methods
+    "D203",     # Ignore missing blank line before class
+    "D211",     # Ignore no blank line before class
+    "D212",     # Ignore docstring first line mismatch (conflict with D213)
+    "B008",     # FastAPI dependencies exception (allow for mutable default arguments)
+    "F811",     # Allow redefinition of imports in the same module
+    "Q001",     # Ignore wrong quote style for strings (single vs double)
+    "COM812",   # Ignore conflicts with formatter (parentheses in multi-line expressions)
+    "ISC001",   # Ignore conflicts with formatter (explicit string concatenation)
+    "EM101",    # Allow exceptions message
+    "EM102",    # Allow exception f-sting
+    "TRY",      # Allow exceptions
+    "DJ",       # Allow django attributes
+    "ARG",      # Allow unsed parameters for django
+    "RUF012",   # Allow mutubal class
+    "PLW1508"   # Dotenv ignore type
+]
+
+
+[format]
+quote-style = "single"
+indent-style = "space"
+
+
+[lint.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "single"
+multiline-quotes = "single"
+
+
+[lint.per-file-ignores]
+"src/core/management/**" = [
+    "T201"      # Ignore print statements
+]
+"src/core/logger/**" = [
+    "ARG001",   # Ignore missing function arguments documentation
+    "ARG002",   # Ignore untyped **kwargs (commonly used in logging functions)
+]
